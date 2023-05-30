@@ -823,58 +823,21 @@ void loop() {
           tft.fillRect(415,128, 60, 17, TFT_NAVY);
           tft.drawString(RTold, 6,250.4); 
           tft.drawString(PTYold, 100, 75,4 ); 
-          //tft.setFreeFont(NULL);  
 
-            /*
-          tft.fillRect(20, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(34, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(48, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(62, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(76, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(90, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(104, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(118, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(132, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(146, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(160, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(174, 139, 12, 8, TFT_GREYOUT);
-          tft.fillRect(188, 139, 12, 8, TFT_GREYOUT);
+          tft.drawString("20", 285, 88, 1); 
+          tft.drawString("40", 315, 88, 1);
+          tft.drawString("60", 345, 88, 1);
+          tft.drawString("80", 375, 88, 1);
+          tft.drawString("100", 375, 88, 1);
+          tft.drawString("120", 429, 88, 1); 
+          tft.drawString("%", 461, 88, 1);
+          tft.drawBitmap(115, 5, RDSLogo, 67, 22, TFT_GREYOUT);
 
-          */
-          //tft.setTextColor(TFT_GREYOUT);
-
-          /*
-          tft.drawString("20", 20, 153, 1);
-          tft.drawString("40", 50, 153, 1);
-          tft.drawString("60", 80, 153, 1);
-          tft.drawString("80", 110, 153, 1);
-          tft.drawString("100", 134, 153, 1);
-          tft.drawString("120", 164, 153, 1);
-          tft.drawString("%", 196, 153, 1);
-          tft.drawString("M", 6, 136, 2);
-          tft.drawString("PI:", 216, 195, 2);
-          tft.drawString("PS:", 6, 195, 2);
-          tft.drawString("PTY:", 6, 168, 2);
-          tft.drawLine(20, 150, 200, 150, TFT_GREYOUT);
-          tft.drawBitmap(110, 5, RDSLogo, 67, 22, TFT_GREYOUT);
-          */
-
-        tft.drawString("20", 285, 88, 1); 
-        tft.drawString("40", 315, 88, 1);
-        tft.drawString("60", 345, 88, 1);
-        tft.drawString("80", 375, 88, 1);
-        tft.drawString("100", 375, 88, 1);
-        tft.drawString("120", 429, 88, 1); 
-        tft.drawString("%", 461, 88, 1);
-        //tft.drawString("M", 6, 136, 2);
-         tft.drawBitmap(115, 5, RDSLogo, 67, 22, TFT_GREYOUT);
-
-        tft.setFreeFont(&Serif_bold_15);
-        tft.drawString("PI:", 380,130);
-        tft.drawString("Station Name:", 30, 113);
-        tft.drawString("Genre:", 30,75);
-        //tft.drawLine(285, 283, 200, 150, TFT_DARKGREY);
-        tft.setFreeFont(NULL);
+          tft.setFreeFont(&Serif_bold_15);
+          tft.drawString("PI:", 380,130);
+          tft.drawString("Station Name:", 30, 113);
+          tft.drawString("Genre:", 30,75);
+          tft.setFreeFont(NULL);
         }
         LowLevelInit = false;
       }
@@ -1656,8 +1619,8 @@ void readRds() {
       tft.setTextColor(TFT_NAVY );
       tft.setFreeFont(&Serif_bold_15);
       tft.drawString(PIold, 420,130); 
-      tft.drawString(PSold, 165, 113);                                //ID Nume Post FM gen
-      tft.drawString(RTold, 6,250);                                           // //rds text info FM
+      tft.drawString(PSold, 165, 113);                             
+      tft.drawString(RTold, 6,250);                                         
       tft.drawString(PTYold,100, 75 );
       tft.setFreeFont(NULL); 
     }
@@ -1708,7 +1671,7 @@ void showPS() {
   if ((RDSstatus == 1) && strcmp(radio.rds.stationName, programServicePrevious)) {
     tft.setTextColor(TFT_NAVY );
     tft.setFreeFont(&Serif_bold_15);
-    tft.drawString(PSold, 165, 113);                           //ID Nume Post FM
+    tft.drawString(PSold, 165, 113);                        
     tft.setTextColor(TFT_YELLOW);
     tft.drawString(radio.rds.stationName, 165, 113); 
     PSold = radio.rds.stationName;
@@ -1818,23 +1781,23 @@ void MuteScreen(int setting) {
 
 void BuildDisplay() {
   tft.fillScreen(TFT_NAVY );
-  tft.drawRect(0, 0, 480, 320, TFT_BLUE);       // chenar
-  tft.drawLine(0, 30, 480, 30, TFT_BLUE);       // prima linie oriz
-  tft.drawLine(0, 100, 480, 100, TFT_BLUE);     // a doua linie oriz   
-  tft.drawLine(0, 230, 480, 230, TFT_BLUE);       // a treia linie oriz
+  tft.drawRect(0, 0, 480, 320, TFT_BLUE);   
+  tft.drawLine(0, 30, 480, 30, TFT_BLUE);      
+  tft.drawLine(0, 100, 480, 100, TFT_BLUE);       
+  tft.drawLine(0, 230, 480, 230, TFT_BLUE);       
   
-  tft.drawLine( 65, 30, 65, 0, TFT_BLUE);           // prima linie vert
-  tft.drawLine(110, 30, 110, 0, TFT_BLUE);         // a doua linie vert
-  tft.drawLine(185, 30, 185, 0, TFT_BLUE);         // a treia linie vert
-  tft.drawLine(330, 30, 330, 0, TFT_BLUE);         // a patra linie vert
+  tft.drawLine( 65, 30, 65, 0, TFT_BLUE);          
+  tft.drawLine(110, 30, 110, 0, TFT_BLUE);         
+  tft.drawLine(185, 30, 185, 0, TFT_BLUE);         
+  tft.drawLine(330, 30, 330, 0, TFT_BLUE);       
  
   for (uint16_t segments = 0; segments < 94; segments++) {
     if (segments > 54) {
       if (((segments - 53) % 10) == 0)
-        tft.fillRect(277 + (2 * segments), 44, 2, 3, TFT_RED);     // puncte s-metru    117, 2, 3,
+        tft.fillRect(277 + (2 * segments), 44, 2, 3, TFT_RED);    
     } else {
       if (((segments + 1) % 6) == 0)
-        tft.fillRect(277 + (2 * segments), 44, 2, 3, TFT_GREEN);    // puncte s-metru   117, 2, 3,
+        tft.fillRect(277 + (2 * segments), 44, 2, 3, TFT_GREEN);    
     }
   }
   tft.setTextColor(TFT_WHITE);
@@ -1853,7 +1816,7 @@ void BuildDisplay() {
 
         tft.setFreeFont(&Serif_bold_15);
         tft.setTextColor(TFT_GOLD);    
-        tft.drawString("Station Name:", 30, 113);                      //6, 221, 2);
+        tft.drawString("Station Name:", 30, 113);                   
         tft.drawString("Genre:", 30,75);
         tft.setFreeFont(NULL);
 
@@ -1864,41 +1827,41 @@ void BuildDisplay() {
         tft.setTextColor(TFT_GOLD);
         tft.drawString("PI:", 380,130);                                     
         tft.drawString("S/N", 380, 110);
-        tft.drawString("dB",  445, 110);      // pozitie db sus
+        tft.drawString("dB",  445, 110);      
         
         tft.setFreeFont(NULL);
   
   
-        tft.drawString("1",   285, 52, 1);                                          //("1", 24, 123, 1);
-        tft.drawString("3",   309, 52, 1);                                          //("3", 48, 123, 1);
-        tft.drawString("5",   333, 52, 1);                                          //("5", 72, 123, 1);
-        tft.drawString("7",   357, 52, 1);                                          //("7", 96, 123, 1);
-        tft.drawString("9",   382, 52, 1);                                          //("9", 120, 123, 1);
-        tft.drawString("+10", 401, 52, 1);                                          //("+10", 134, 123, 1);
-        tft.drawString("+30", 442, 52, 1);                                          //("+30", 174, 123, 1);
+        tft.drawString("1",   285, 52, 1);                                         
+        tft.drawString("3",   309, 52, 1);                                        
+        tft.drawString("5",   333, 52, 1);                                          
+        tft.drawString("7",   357, 52, 1);                                         
+        tft.drawString("9",   382, 52, 1);                                       
+        tft.drawString("+10", 401, 52, 1);                                        
+        tft.drawString("+30", 442, 52, 1);                                        
 
-        tft.drawString   ("20",  285, 88, 1);              //("20", 20, 153, 1);
-        tft.drawString   ("40",  315, 88, 1);              //("40", 50, 153, 1);
-        tft.drawString   ("60",  345, 88, 1);              //("60", 80, 153, 1);
-        tft.drawString   ("80",  375, 88, 1);              //("80", 110, 153, 1);
-        tft.drawString   ("100", 399, 88, 1);              //("100", 134, 153, 1);
-        tft.drawString   ("120", 429, 88, 1);              //("120", 164, 153, 1);
+        tft.drawString   ("20",  285, 88, 1);             
+        tft.drawString   ("40",  315, 88, 1);           
+        tft.drawString   ("60",  345, 88, 1);             
+        tft.drawString   ("80",  375, 88, 1);             
+        tft.drawString   ("100", 399, 88, 1);              
+        tft.drawString   ("120", 429, 88, 1);            
         tft.drawString   ("%",   461, 88, 1);
         
         tft.setTextColor(TFT_WHITE);
         tft.setTextColor(TFT_WHITE);
         tft.setCursor (335, 6,4);  
         tft.print("BW");
-        tft.drawString("kHz", 435, 6, 4);              // khz largime banda
+        tft.drawString("kHz", 435, 6, 4);            
         tft.setTextColor(TFT_WHITE);
   if (band == 0) 
-       tft.drawString("MHz", 265, 190, 4);            // de la frecventa
+       tft.drawString("MHz", 265, 190, 4);            
   else 
-       tft.drawString("kHz", 265, 190, 4);            //  de la frecventa
+       tft.drawString("kHz", 265, 190, 4);         
   //tft.setTextColor(TFT_WHITE);
 
        tft.setFreeFont(&Serif_bold_15); 
-       tft.drawString("dBuV", 422, 195);                //pozitie text"dbuv" de la nivel semnal jos pe linia cu frecv
+       tft.drawString("dBuV", 422, 195);               
        tft.setFreeFont(NULL);
   
   //tft.drawPixel(295, 166, TFT_WHITE);
@@ -1950,10 +1913,10 @@ void ShowFreq(int mode) {
       String count = String(freq, DEC);
       if (count.length() != freqoldcount || mode != 0) {
         tft.setTextColor(TFT_NAVY );
-        tft.drawRightString(String(freqold), 250,160,7 );    // 248, 45, 7);      //acopera frecventa vfo AM
+        tft.drawRightString(String(freqold), 250,160,7 );    
       }
       tft.setTextColor(TFT_YELLOW, TFT_NAVY);
-      tft.drawRightString(String(freq), 250,160,7);         //248, 45, 7);        //afiseaza frecventa vfo AM
+      tft.drawRightString(String(freq), 250,160,7);       
       freqold = freq;
       freqoldcount = count.length();
     } else {
@@ -1962,7 +1925,7 @@ void ShowFreq(int mode) {
       if (count.length() != freqoldcount || mode != 0) {
         tft.setTextColor(TFT_NAVY );
         if (freqoldcount <= 2) 
-        tft.setCursor (108, 160);      //curata acopera frecventa vfo FM 
+        tft.setCursor (108, 160);    
         if (freqoldcount == 3) 
         tft.setCursor (76, 160);
         if (freqoldcount >= 4) 
@@ -1978,7 +1941,7 @@ void ShowFreq(int mode) {
       tft.setTextColor(TFT_YELLOW, TFT_NAVY);
       if (mode == 0) {
         if (count.length() <= 2) 
-        tft.setCursor (108, 160);     //afiseaza frecventa vfo FM
+        tft.setCursor (108, 160);    
         if (count.length() == 3) 
         tft.setCursor (76, 160);
         if (count.length() >= 4) 
@@ -2016,10 +1979,10 @@ void ShowSignalLevel() {
 
   if (SNR > (SNRold + 1) || SNR < (SNRold - 1)) {
     tft.setFreeFont(&Serif_bold_15);
-    tft.setCursor (420, 122);                              // acopera pozitie val nivel sn dB (cyan)
+    tft.setCursor (420, 122);                             
     tft.setTextColor(TFT_NAVY );
     if (SNRold == 99) tft.print("--"); else  tft.print(SNRold);
-    tft.setCursor (420, 122);                              // pozitie val nivel sn dB
+    tft.setCursor (420, 122);                            
     tft.setTextColor(TFT_CYAN, TFT_NAVY);
     if (tuned == true) {
       tft.print(SNR);
@@ -2064,7 +2027,7 @@ void ShowSignalLevel() {
     if (SStatus < -400) SStatus = -400;
     String count = String(abs(SStatus / 10), DEC);
     tft.setTextColor(1, TFT_NAVY);
-    tft.setCursor (335, 170);                            // afiseaza pozitie 2 cifre dbuv 
+    tft.setCursor (335, 170);                           
     tft.setTextFont(6);
     if (SStatus >= 0) {
       if (count.length() == 1) tft.print("00");
@@ -2076,7 +2039,7 @@ void ShowSignalLevel() {
     tft.setTextColor(TFT_YELLOW, TFT_NAVY); //DSP
     if (SStatus < 0) tft.print("-");
     tft.print(abs(SStatus / 10));
-    tft.setCursor (418, 169);     // pozitie punct si zecimala nivel semnal dbuv
+    tft.setCursor (418, 169);    
     tft.setTextFont(4);
     tft.print(".");
     if (SStatus < 0)
@@ -2261,7 +2224,7 @@ void ShowModLevel() {
       if (MStatus > (segments + 1) * 10)
       {
         hold = segments;
-        tft.fillRect(285 + segments * 14, 76, 12, 8, color);                                   // vumetru
+        tft.fillRect(285 + segments * 14, 76, 12, 8, color);                               
       } else {
         if (segments != peakholdold) 
         tft.fillRect(285 + segments * 14, 76, 12, 8, TFT_GREYOUT);
@@ -2287,7 +2250,7 @@ void doSquelch() {
     if (seek == false && menu == false && Squelch != Squelchold) {
       tft.setTextFont(2);
       tft.setTextColor(TFT_NAVY );
-      tft.setCursor (85, 39);                     //pozitie acoperire squelch 2 cifre sus chenar
+      tft.setCursor (85, 39);                   
       if (Squelchold == -100) {
         tft.print("OFF");
       } else if (Squelchold == 920) {
@@ -2296,7 +2259,7 @@ void doSquelch() {
         tft.print(Squelchold / 10);
       }
       tft.setTextColor(TFT_WHITE);
-      tft.setCursor (85, 39);                  //pozitie valoare squelch 2 cifre sus chenar
+      tft.setCursor (85, 39);                
       if (Squelch == -100) {
         tft.print("OFF");
       } else if (Squelch == 920) {
